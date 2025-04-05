@@ -19,6 +19,14 @@
 						<button class="navbar-items" id="button2">SECTION 2</button>
 						<button class="navbar-items" id="button3">SECTION 3</button>
 					</nav>
+					<div class="statistics">
+						<div class="stats-column">
+							<div id="bank-balance"> {{Bank Balance}} </div>
+							<div id="monthly-limit"> {{Monthly Limit}} </div>
+							<div id="streak"> {{Streak}} </div>
+						</div>
+						<div id="graph-container"><img src="{{ url_for('static', filename=" graph.png") }}"></div>
+					</div>
 				</section>
 			</div>
 		</main>
