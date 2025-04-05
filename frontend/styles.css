@@ -1,102 +1,87 @@
 * {
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	font-size: 22px;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
 body {
-	font-family: Arial, sans-serif;
-	background-color: #f0f2f5;
+	background: linear-gradient(-45deg, #f7bcbe, #fad0c4, #a1c4fd, #c2e9fb);
+	background-size: 400% 400%;
+	animation: gradientMove 30s ease-in-out infinite;
 	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
+#content {
+	background-color: rgba(224, 224, 224, 0.5);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	width: 100%;
+	height: 850px;
+	border-radius: 16px;
+}
+
+#navbar {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-self: center;
+	margin: 20px 40px 0 40px;
+	width: 95%;
+	height: 100px;
+	border-radius: 30px;
+	/* Increased border-radius for a more rounded appearance */
+	background-color: rgba(255, 255, 255, 0.15);
+	/* Slightly more transparent for a delicate glass effect */
+	backdrop-filter: blur(15px);
+	/* Increased blur for a more pronounced frosted glass effect */
+	-webkit-backdrop-filter: blur(15px);
+	/* Safari support */
+	border: 1px solid rgba(255, 255, 255, 0.25);
+	/* Subtle border for definition */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	/* Soft shadow for depth */
+}
+
+button {
+	border-radius: 16px;
+	background-color: rgba(214, 214, 214, 0.3);
+}
+
+.navbar-items {
+	margin-left: 25px;
+	margin-right: 25px;
+	align-self: center;
+	width: 200px;
+	height: 50px;
+}
+
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 1600px;
 	padding: 20px;
 }
 
 .content-wrapper {
 	display: flex;
 	align-items: center;
-	gap: 50px;
 }
 
-.profile-section {
-	background-color: white;
-	border-radius: 10px;
-	padding: 15px;
-	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
+@keyframes gradientMove {
+	0% {
+		background-position: 0% 50%;
+	}
 
-.profile-image {
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	overflow: hidden;
-	border: 3px solid #ffffff;
-	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-	position: relative;
-	background-color: #f8f9fa;
-}
+	50% {
+		background-position: 100% 50%;
+	}
 
-.profile-image img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	transition: transform 0.3s ease;
-	padding: 15px;
-}
-
-.profile-image:hover img {
-	transform: scale(1.05);
-}
-
-.hover-text {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	opacity: 0;
-	transition: opacity 0.3s ease;
-	color: white;
-	text-align: center;
-	padding: 8px;
-	font-size: 11px;
-}
-
-.profile-image:hover .hover-text {
-	opacity: 1;
-}
-
-.hover-text h2 {
-	font-size: 13px;
-	margin-bottom: 4px;
-}
-
-.hover-text ul {
-	list-style: none;
-}
-
-.hover-text li {
-	margin: 1px 0;
-}
-
-.greeting {
-	text-align: center;
-}
-
-.greeting h1 {
-	font-size: 48px;
-	color: #333;
-	font-weight: bold;
+	100% {
+		background-position: 0% 50%;
+	}
 }
